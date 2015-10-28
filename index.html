@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="lib/semantic/css/semantic.min.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700"/>
+</head>
+<body>
+    <div class="ui inverted red basic segment">
+        <div class="banner ui center aligned icon header">
+            <i class="code icon"></i>
+            <h1>OSS Society Student Profiles</h1>
+            <h4>Computer Science</h4>
+        </div>
+    </div>
+    <div class="main container">
+        <div class="ui input">
+            <input placeholder="Search…" type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+        </div>
+        <div class="ui four doubling cards" data-bind='foreach: students'>
+            <div class="card">
+                <div class="content">
+                <img class="right floated massive ui image" data-bind="attr: { src: avatarUrl }">
+                    <div class="header" data-bind="text: name"></div>
+                    <div class="description" data-bind="html: bodyHtml"></div>
+                </div>
+             </div> 
+        </div>
+    </div><!-- Main Container -->
+    <footer id="footer">
+        <div class="ui basic segment">
+            <p>Student information gathered from <a target="_blank" href="https://github.com/open-source-society/computer-science/issues">Github</a></p>
+        </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="lib/semantic/javascript/semantic.min.js"></script>
+    <script src="js/knockout-3.2.0.js"></script>
+    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.3.0/dist/showdown.min.js"></script>
+    <!-- App JS -->
+    <script src="js/app.js"></script>
+    <script src="js/viewmodel.js"></script> 
+</body>
+</html>
